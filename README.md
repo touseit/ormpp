@@ -79,7 +79,11 @@ ormpp是modern c++(c++11/14/17)开发的ORM库，目前支持了三种数据库�
 
 ### 编译器支持
 
-需要支持C++17的编译器, 要求的编译器版本：linux gcc7.2, clang4.0; windows >vs2017 update5
+需要支持C++17的编译器, 要求的编译器版本：linux gcc7.2, clang4.0; windows >vs2017 update5,另外启用vs2017 C++17支持，需要做如下配置。
+under project > Properties > C/C++ > Language > C++ Language Standard)
+ISO C++14 Standard. msvc command line option: /std:c++14
+ISO C++17 Standard. msvc command line option: /std:c++17
+The latest draft standard. msvc command line option: /std:c++latest
 
 ### 数据库的安装
 
@@ -176,7 +180,7 @@ connect exmple:
 
 	postgres.connect("127.0.0.1", "root", "12345", "testdb")
 
-	sqlite.connect("127.0.0.1", "root", "12345", "testdb")
+	sqlite.connect("testdb")
 
 返回值：bool，成功返回true，失败返回false.
 
